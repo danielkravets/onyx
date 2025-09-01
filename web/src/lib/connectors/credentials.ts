@@ -55,6 +55,11 @@ export interface GitlabCredentialJson {
   gitlab_access_token: string;
 }
 
+export interface BitbucketCredentialJson {
+  bitbucket_email: string;
+  bitbucket_api_token: string;
+}
+
 export interface BookstackCredentialJson {
   bookstack_base_url: string;
   bookstack_api_token_id: string;
@@ -267,6 +272,10 @@ export const credentialTemplates: Record<ValidSources, any> = {
     gitlab_url: "",
     gitlab_access_token: "",
   } as GitlabCredentialJson,
+  bitbucket: {
+    bitbucket_email: "",
+    bitbucket_api_token: "",
+  } as BitbucketCredentialJson,
   slack: { slack_bot_token: "" } as SlackCredentialJson,
   bookstack: {
     bookstack_base_url: "",
@@ -464,7 +473,8 @@ export const credentialDisplayNames: Record<string, string> = {
   bookstack_api_token_secret: "Bookstack API Token Secret",
 
   // Outline
-  outline_base_url: "Outline Base URL (e.g. https://app.getoutline.com or your self-hosted URL)",
+  outline_base_url:
+    "Outline Base URL (e.g. https://app.getoutline.com or your self-hosted URL)",
   outline_api_token: "Outline API Token",
 
   // Confluence
@@ -600,6 +610,10 @@ export const credentialDisplayNames: Record<string, string> = {
   highspot_url: "Highspot URL",
   highspot_key: "Highspot Key",
   highspot_secret: "Highspot Secret",
+
+  // Bitbucket
+  bitbucket_email: "Bitbucket Account Email",
+  bitbucket_api_token: "Bitbucket API Token",
 };
 
 export function getDisplayNameForCredentialKey(key: string): string {
